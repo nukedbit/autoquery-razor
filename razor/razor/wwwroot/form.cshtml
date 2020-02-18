@@ -1,0 +1,13 @@
+@using razor.ServiceInterface
+@{
+    var response = await Gateway.SendAsync(new QueryCategories());
+}
+<p>Categories:</p>
+@foreach (var category in response.Results)
+{
+    <p>@category.Name</p>
+}
+<form method="POST">
+    <input type="text" name="name" id="name"/>
+    <input class="btn btn-primary" type="submit" value="Submit"/>
+</form>

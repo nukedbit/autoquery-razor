@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <!-- Disabling pre-compilation is required for advanced features like: https://docs.servicestack.net/netcore-razor#page-based-routing-in-razor  -->
+    <RazorCompileOnPublish>false</RazorCompileOnPublish>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ServiceStack" Version="5.8.1" />
+    <PackageReference Include="ServiceStack.Mvc" Version="5.8.1" />
+
+    <!-- Required for Razor compilation on change: https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-compilation?view=aspnetcore-3.1 -->
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.0" Condition="'$(Configuration)' == 'Debug'" />
+    <PackageReference Include="ServiceStack.OrmLite.PostgreSQL" Version="5.8.1" />
+    <PackageReference Include="ServiceStack.Server" Version="5.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\razor.ServiceInterface\razor.ServiceInterface.csproj" />
+    <ProjectReference Include="..\razor.ServiceModel\razor.ServiceModel.csproj" />
+  </ItemGroup>
+
+</Project>
