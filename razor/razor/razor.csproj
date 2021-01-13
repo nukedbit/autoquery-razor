@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ServiceStack" Version="5.8.1" />
+    <PackageReference Include="ServiceStack" Version="5.9.2" />
     <PackageReference Include="ServiceStack.Mvc" Version="5.8.1" />
 
     <!-- Required for Razor compilation on change: https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-compilation?view=aspnetcore-3.1 -->
